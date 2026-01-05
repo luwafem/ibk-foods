@@ -18,7 +18,6 @@ export default function App() {
     <div className="min-h-screen bg-gray-50">
       
       {/* 🌟 SCROLLING CARD HEADER (Not Sticky/Fixed) */}
-      {/* Removed: fixed top-3 inset-x-4 z-40 */}
       <header className="mx-4 mt-4 bg-white p-5 rounded-xl text-center border border-gray-100">
         
         {/* Title */}
@@ -45,11 +44,20 @@ export default function App() {
       </header>
       
       {/* 💻 MAIN SCROLLING CONTENT AREA */}
-      {/* 🚨 Removed pt-48. Content now starts immediately after the header. */}
-      {/* Main div uses p-4, but since the header already used top margin/padding, we adjust the top spacing. */}
-      {/* We use py-4 for vertical padding, and keep horizontal padding from the outer container. */}
       <div className="py-4 px-4 pb-28"> 
         <Menu onSelect={setFood} />
+        
+        {/* 📝 SIMPLE FOOTER SECTION */}
+        <footer className="mt-12 pt-8 border-t border-gray-200 text-center text-xs text-gray-500">
+          <p className="mb-1">
+            &copy; {new Date().getFullYear()} IBK FOODS. All rights reserved.
+          </p>
+          <p className="text-xs">
+            Powered by Delicious Tech.
+          </p>
+        </footer>
+        {/* END OF FOOTER */}
+        
       </div>
 
       {/* 🛒 FLOATING CHECKOUT BUTTON (Remains Fixed) */}
