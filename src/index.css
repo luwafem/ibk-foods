@@ -2,10 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body, #root {
+  /* Ensure these take up the full available height */
+  height: 100%; 
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* 🚨 CRITICAL FIX FOR IOS 🚨 */
+  /* This property fixes viewport height issues on WebKit (iOS Safari) */
+  height: -webkit-fill-available;
+}
+
 body {
   background-color: #f9fafb;
 }
-
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
