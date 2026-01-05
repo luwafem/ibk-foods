@@ -15,40 +15,48 @@ export default function App() {
   const isCartEmpty = cart.length === 0;
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    // 🚨 1. Set main container to flex column, taking full screen height
+    <div className="flex flex-col min-h-screen bg-gray-50">
       
-      {/* 🌟 SCROLLING CARD HEADER (Not Sticky/Fixed) */}
-      <header className="mx-4 mt-4 bg-white p-5 rounded-xl text-center border border-gray-100">
+      {/* 💻 MAIN SCROLLABLE CONTENT AREA WRAPPER */}
+      {/* 🚨 2. Apply flex-1 to push the scrolling content to fill available space */}
+      <div className="flex-1"> 
+
+        {/* 🌟 SCROLLING CARD HEADER (Not Fixed) */}
+        <header className="mx-4 mt-4 bg-white p-5 rounded-xl text-center border border-gray-100">
+          
+          {/* Title */}
+          <h1 className="text-2xl font-bold text-gray-900 tracking-tight">
+            IBK FOODS
+          </h1>
+          
+          {/* Slogan */}
+          <p className="text-sm font-light text-gray-500 mb-2">
+            The best local flavours.
+          </p>
+          
+          <hr className="my-2 border-gray-100" />
+          
+          {/* Status Line */}
+          <div className={`text-sm font-medium pt-1 flex items-center justify-center gap-2 ${SETTINGS.isOpen ? "text-green-600" : "text-gray-600"}`}>
+            <span className={`h-2 w-2 rounded-full ${SETTINGS.isOpen ? "bg-green-500" : "bg-gray-400"}`} />
+            <span>
+              {SETTINGS.isOpen ? "Open Now" : "Closed"} 
+              <span className="text-gray-400 mx-2">•</span>
+              {SETTINGS.openingHours}
+            </span>
+          </div>
+        </header>
         
-        {/* Title */}
-        <h1 className="text-2xl font-bold text-gray-900 tracking-tight">
-          IBK FOODS
-        </h1>
-        
-        {/* Slogan */}
-        <p className="text-sm font-light text-gray-500 mb-2">
-          The best local flavours.
-        </p>
-        
-        <hr className="my-2 border-gray-100" />
-        
-        {/* Status Line */}
-        <div className={`text-sm font-medium pt-1 flex items-center justify-center gap-2 ${SETTINGS.isOpen ? "text-green-600" : "text-gray-600"}`}>
-          <span className={`h-2 w-2 rounded-full ${SETTINGS.isOpen ? "bg-green-500" : "bg-gray-400"}`} />
-          <span>
-            {SETTINGS.isOpen ? "Open Now" : "Closed"} 
-            <span className="text-gray-400 mx-2">•</span>
-            {SETTINGS.openingHours}
-          </span>
+        {/* Menu Content Area */}
+        {/* We use pb-28 here to clear BOTH the scrolling footer AND the fixed checkout button */}
+        <div className="py-4 px-4 pb-28"> 
+          <Menu onSelect={setFood} />
         </div>
-      </header>
-      
-      {/* 💻 MAIN SCROLLING CONTENT AREA */}
-      <div className="py-4 px-4 pb-28"> 
-        <Menu onSelect={setFood} />
-        
-        {/* 📝 SIMPLE FOOTER SECTION */}
-        <footer className="mt-12 pt-8 border-t border-gray-200 text-center text-xs text-gray-500">
+
+        {/* 📝 SIMPLE FOOTER SECTION (Placed after Menu to appear at the bottom) */}
+        {/* Added margin top (mt-auto) to assist in pushing the footer down if the menu is short */}
+        <footer className="mt-12 pt-8 border-t border-gray-200 text-center text-xs text-gray-500 mx-4">
           <p className="mb-1">
             &copy; {new Date().getFullYear()} IBK FOODS. All rights reserved.
           </p>
@@ -58,9 +66,10 @@ export default function App() {
         </footer>
         {/* END OF FOOTER */}
         
-      </div>
+      </div> 
+      {/* END MAIN SCROLLABLE WRAPPER */}
 
-      {/* 🛒 FLOATING CHECKOUT BUTTON (Remains Fixed) */}
+      {/* 🛒 FLOATING CHECKOUT BUTTON (Remains Fixed outside the flex-1 container) */}
       {!isCartEmpty && (
         <div className="fixed bottom-0 left-0 right-0 p-4 bg-white shadow-[0_-5px_15px_rgba(0,0,0,0.05)] z-40">
           <button
