@@ -30,5 +30,20 @@ export const menu = [
       { id: "special", name: "Special", price: 2000 }
     ],
     addons: [{ id: "extra_egg", name: "Extra Egg", price: 300 }]
+  },
+  // 🍨 NEW PARFAIT OPTION 🍨
+  {
+    id: "parfait",
+    name: "Parfait",
+    icon: "🍨",
+    variants: [
+      { id: "medium", name: "Medium Size", price: 2800 },
+      { id: "large", name: "Large Size", price: 3500 }
+    ],
+    addons: [
+      { id: "granola", name: "Extra Granola", price: 400 },
+      { id: "honey", name: "Extra Honey Drizzle", price: 300 },
+      { id: "fruit_mix", name: "Exotic Fruit Mix", price: 600 }
+    ]
   }
 ];

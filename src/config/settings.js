@@ -21,5 +21,6 @@ export const SETTINGS = {
 export const DAILY_MENU = {
   shawarma: true,
   pepper_soup: true,
-  noodles: true
+  noodles: true,
+  parfait: true,
 };
