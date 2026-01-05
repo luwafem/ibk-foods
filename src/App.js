@@ -17,8 +17,9 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gray-50">
       
-      {/* 🌟 MINIMALIST FLOATING CARD HEADER (Shadows Removed) */}
-      <header className="fixed top-3 inset-x-4 z-40 bg-white p-5 rounded-xl text-center border border-gray-100">
+      {/* 🌟 SCROLLING CARD HEADER (Not Sticky/Fixed) */}
+      {/* Removed: fixed top-3 inset-x-4 z-40 */}
+      <header className="mx-4 mt-4 bg-white p-5 rounded-xl text-center border border-gray-100">
         
         {/* Title */}
         <h1 className="text-2xl font-bold text-gray-900 tracking-tight">
@@ -44,17 +45,18 @@ export default function App() {
       </header>
       
       {/* 💻 MAIN SCROLLING CONTENT AREA */}
-      {/* Retain padding to clear the fixed header and footer */}
-      <div className="pt-48 pb-28 p-4">
+      {/* 🚨 Removed pt-48. Content now starts immediately after the header. */}
+      {/* Main div uses p-4, but since the header already used top margin/padding, we adjust the top spacing. */}
+      {/* We use py-4 for vertical padding, and keep horizontal padding from the outer container. */}
+      <div className="py-4 px-4 pb-28"> 
         <Menu onSelect={setFood} />
       </div>
 
-      {/* 🛒 FLOATING CHECKOUT BUTTON (Removed Shadow) */}
+      {/* 🛒 FLOATING CHECKOUT BUTTON (Remains Fixed) */}
       {!isCartEmpty && (
         <div className="fixed bottom-0 left-0 right-0 p-4 bg-white shadow-[0_-5px_15px_rgba(0,0,0,0.05)] z-40">
           <button
             onClick={() => setCheckout(true)}
-            // 🚨 Removed shadow-lg and shadow-orange-300
             className="w-full py-4 text-lg font-extrabold rounded-2xl transition 
                        bg-orange-600 hover:bg-orange-700 text-white 
                        active:scale-[0.98]" 
