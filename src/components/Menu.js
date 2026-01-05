@@ -7,13 +7,13 @@ const WHATSAPP_NUMBER = "2348012345678"; // Replace with IBK FOODS' actual Whats
 // --- EXTERNAL IMAGE URLS (EXAMPLE DATA) ---
 const CAKE_SHOWCASE_DATA = [
   // Removed 'price' property
-  { id: 1, name: "Velvet Red Cake", image: "https://example.com/images/cake-red.jpg" },
-  { id: 2, name: "Chocolate Drip", image: "https://example.com/images/cake-choc.jpg" },
-  { id: 3, name: "Birthday Funfetti", image: "https://example.com/images/cake-party.jpg" },
-  { id: 4, name: "Classic Vanilla", image: "https://example.com/images/cake-vanilla.jpg" },
+  { id: 1, name: "Velvet Red Cake", image: "https://images.pexels.com/photos/1702373/pexels-photo-1702373.jpeg" },
+  { id: 2, name: "Chocolate Drip", image: "https://images.pexels.com/photos/140831/pexels-photo-140831.jpeg" },
+  { id: 3, name: "Birthday Funfetti", image: "https://images.pexels.com/photos/1889651/pexels-photo-1889651.jpeg" },
+  { id: 4, name: "Classic Vanilla", image: "https://images.pexels.com/photos/1721934/pexels-photo-1721934.jpeg" },
 ];
 
-const HERO_IMAGE_URL = "https://example.com/images/hero-food.jpg"; 
+const HERO_IMAGE_URL = "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg"; 
 // ------------------------------------------
 
 // Utility function to generate the WhatsApp link
