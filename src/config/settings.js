@@ -8,7 +8,7 @@ export const SETTINGS = {
   openingHours: "5:00 PM – 11:00 PM",
 
   // WhatsApp number (NO + sign)
-  whatsappNumber: "2348012345678",
+  whatsappNumber: "2349127373463",
 
   // Paystack PUBLIC key (pk_test_... or pk_live_...)
   paystackKey: "pk_test_129628160c0fdb0e1e837751e5ff0233872676b8",
